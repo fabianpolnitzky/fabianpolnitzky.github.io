@@ -1,0 +1,32 @@
+---
+layout: archive
+title: "Talks and Posters"
+permalink: /talks/
+author_profile: true
+---
+
+{% if site.talkmap_link == true %}
+
+<a href="{{ base_path }}/talkmap.html" class="btn btn--primary">See a map of all the places I've presented my research at!</a>
+
+{% endif %}
+
+{% if site.talk_category %}
+  {% for category in site.talk_category %}
+    {% assign title_shown = false %}
+    {% for post in site.talks reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single-talk.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.talks reversed %}
+    {% include archive-single-talk.html %}
+  {% endfor %}
+{% endif %}

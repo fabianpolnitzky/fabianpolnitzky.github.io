@@ -1,0 +1,19 @@
+[project]
+name = "fabianpolnitzky-github-io"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "geopy>=2.5.0",
+    "getorg>=0.3.1",
+    "ipyleaflet>=0.20.0",
+    "ipython>=9.16.1",
+    "ipywidgets>=8.1.8",
+    "jupyter>=1.1.1",
+    "pybtex>=0.26.1",
+    "python-frontmatter>=1.3.0",
+    "pyyaml>=5.1",
+    "ruff>=0.16.2",
+    "ty>=0.0.70",
+]

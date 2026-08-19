@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Teaching and Supervision"
+permalink: /teaching/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% for post in site.teaching reversed %}
+  <div class="archive__item">
+    <h2 class="archive__item-title teaching__item-title">{{ post.title }}</h2>
+    <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
+    <div class="archive__item-body">
+      {{ post.content | markdownify }}
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,14 @@
+---
+layout: archive
+title: "Blog"
+permalink: /blog/
+author_profile: true
+---
+
+<div class="entries-grid">
+{% for post in paginator.posts %}
+    {% include archive-single.html type="grid" %}
+{% endfor %}
+</div>
+
+{% include paginator.html %}

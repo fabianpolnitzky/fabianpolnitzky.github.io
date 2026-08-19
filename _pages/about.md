@@ -13,7 +13,7 @@ Hello,
 
 my name is Fabian and I am an astrophysicist. I have a passion for space exploration and the universe.
 
-I am a PhD student at the RWTH Aachen University in the group of Philipp Mertsch and also part of the [mw-atlas](https://mw-atlas.eu/) project. Currently, I work on the distribution of gas and dust in the Milky Way and the correlation between the two. To study this, I use methods of Bayesian inference and Information Field Theory. 
+I am a PhD student at the RWTH Aachen University in the group of [Philipp Mertsch](https://web.physik.rwth-aachen.de/user/pmertsch/) and also part of the [mw-atlas](https://mw-atlas.eu/) project. Currently, I work on the distribution of gas and dust in the Milky Way and the correlation between the two. To study this, I use methods of Bayesian inference and Information Field Theory. 
 
 Prior to that, I was a Master student at the University of Vienna in the group of [João Alves](https://joaoalves.org/). There I worked on the timescales of protoplanetary disc evolution and dispersion (and I still do occasionally). There I caught my interest in methods of Bayesian inference and machine learning and I enjoy applying these methods to astrophysical problems ever since. 
 

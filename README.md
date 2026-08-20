@@ -1,6 +1,6 @@
 # Personal Webpage of Fabian Polnitzky
 
-This is the repository of the source code for my personal webpage at [fabianpolnitzky.github.io](fabianpolnitzky.github.io). 
+This is the repository of the source code for my personal webpage at [fabianpolnitzky.github.io](https://fabianpolnitzky.github.io/). 
 
 ### Source of this code
 

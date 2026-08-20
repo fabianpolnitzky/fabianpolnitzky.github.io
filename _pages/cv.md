@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="{{ base_path }}/files/CV.pdf" class="btn btn--primary">Download CV as PDF</a>
+<a href="{{ base_path }}/files/CV.pdf" class="btn btn--primary" target="_blank" rel="noopener">Download CV as PDF</a>
 
 Scientific Summary
 ------

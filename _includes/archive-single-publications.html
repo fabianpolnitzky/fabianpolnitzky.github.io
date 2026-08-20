@@ -27,7 +27,7 @@
     {% endif %}
     <h3 class="archive__item-title" itemprop="headline">
       {% if post.paperurl %}
-        <a href="{{ post.paperurl }}">{{ title }}</a>
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ title }}</a>
       {% else %}
         {{ title }}
       {% endif %}

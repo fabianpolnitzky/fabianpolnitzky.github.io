@@ -15,7 +15,7 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
@@ -45,6 +45,16 @@
 
   a + a {
     opacity: 0.5;
+  }
+
+  a {
+    color: var(--global-link-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-link-color);
+      text-decoration: underline;
+    }
   }
 }
 
@@ -83,8 +93,8 @@
     box-shadow: 0 0 10px rgba(#000, 0.25);
   }
 
-  .archive__item-title {
-    text-decoration: underline;
+  .archive__item-excerpt {
+    text-decoration: none !important;
   }
 
   .teaching__item-title {

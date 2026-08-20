@@ -3,8 +3,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.page__content a[href^="http"]').forEach(function(link) {
             if (link.hostname !== window.location.hostname) {
-            link.setAttribute('target', '_blank'); // Open links in a new tab
-            link.setAttribute('rel', 'noopener'); // Prevents the "unsafe" warning in the console
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener');
             }
         });
     });

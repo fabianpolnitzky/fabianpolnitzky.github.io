@@ -41,7 +41,13 @@ Work experience
 * **Research Internship** at the European Southern Observatory<br>
   Automatic classification of young stellar objects' light curves under the supervision of *Amelia Bayo* and *Paula Sánchez Sáez*<br>
   03.2025 - 05.2025
-  
+
+Publications
+======
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
 Skills
 ======
 * **Programming**
@@ -61,12 +67,6 @@ Skills
 
 * **Observations**<br>
   Approved operator of the **Vienna Little Telescope** of the Department of Astrophysics, University of Vienna
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
   
 Talks and Posters
 ======

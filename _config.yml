@@ -63,7 +63,7 @@ atom_feed:
 
 
 # Social Sharing
-og_image                 :  # Social media default site image
+og_image                 : "profile.png" # Social media default site image
 og_description           : Personal academic webpage of Fabian Polnitzky # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -73,7 +73,7 @@ social:
   links:   # An array of links to social media profiles
     - "https://orcid.org/0009-0006-3890-8980"
     - "https://github.com/fabianpolnitzky"
-    - https://bsky.app/profile/fabian-polnitzky.bsky.social
+    - "https://bsky.app/profile/fabian-polnitzky.bsky.social"
     # - linkedin
 
 

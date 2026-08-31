@@ -22,3 +22,5 @@ package-lock.json
 .venv/
 uv.lock
 .python-version
+
+CLAUDE.md

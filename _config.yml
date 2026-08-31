@@ -2,9 +2,8 @@
 locale                   : "en-GB"
 site_theme               : "contrast"
 title                    : "Fabian Polnitzky"
-title_separator          : "-"
-name                     : &name "Fabian Polnitzky"
-description              : &description "Academic Webpage of *name" 
+name                     : "Fabian Polnitzky"
+description              : "Personal academic webpage of Fabian Polnitzky"
 url                      : "https://fabianpolnitzky.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "fabianpolnitzky/fabianpolnitzky.github.io"
@@ -52,14 +51,8 @@ talk_category:
     title: "Posters"
 
 # Site Settings
-teaser                   : # filename of teaser fallback teaser image placed in /images/ for social media previews
-words_per_minute         : 160
 future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : true      #change to true to add link to talkmap on talks page
-atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
-  path                   : # blank (default) uses feed.xml
 
 
 # Social Sharing
@@ -79,7 +72,6 @@ social:
 
 # Reading Files
 include:
-  - .htaccess
   - _pages
   - files
 exclude:
@@ -92,9 +84,11 @@ exclude:
   - .sass-cache
   - assets/js/_main.js
   - assets/js/plugins
+  - assets/js/theme.js
   - assets/js/vendor
   - CHANGELOG
   - Capfile
+  - CLAUDE.md
   - config
   - Gemfile
   - Gruntfile.js
@@ -104,9 +98,12 @@ exclude:
   - log
   - node_modules
   - package.json*
+  - pyproject.toml
   - Rakefile
   - README
+  - talkmap.py
   - tmp
+  - uv.lock
   - vendor
 keep_files:
   - .git
@@ -157,7 +154,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -184,6 +180,18 @@ defaults:
     values:
       layout: talk
       author_profile: true
+  # Keep standalone assets out of sitemap.xml. Search engines should land people
+  # on real pages of the site, not on a bare PDF or the raw map iframe, neither
+  # of which links back to the rest of the site. The pages that present them
+  # (/talks/, /cv/, /talkmap.html) stay in the sitemap.
+  - scope:
+      path: "files"
+    values:
+      sitemap: false
+  - scope:
+      path: "talkmap"
+    values:
+      sitemap: false
 
 
 # Sass/SCSS
@@ -195,14 +203,13 @@ sass:
 # Outputting
 permalink: /:title/
 paginate: 8 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /blog/page:num/ # must stay under the /blog/ permalink of index.html
 timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
@@ -211,7 +218,6 @@ plugins:
 # Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
-  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from

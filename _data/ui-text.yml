@@ -4,21 +4,7 @@ en: &DEFAULT_EN
   pagination_previous        : "Previous"
   pagination_next            : "Next"
   toc_label                  : "On This Page"
-  email_label                : "fabian.polnitzy@rwth-aachen.de"
+  email_label                : "fabian.polnitzky@rwth-aachen.de"
   loading_label              : "Loading..."
-# Blog Post
-  # less_than                  : "less than"
-  # minute_read                : "minute read"
-  # share_on_label             : "Share on"
-  # follow_label               : "Follow:"
-  # feed_label                 : "Feed"
-  # tags_label                 : "Tags:"
-  # categories_label           : "Categories:"
-  # date_label                 : "Published:"
-  # related_label              : "You May Also Enjoy"
-  # recent_posts               : "Recent Posts"
-  # more_label                 : "Learn More"
-  # site_map                   : "Sitemap"
-  # undefined_wpm              : "Undefined parameter words_per_minute at _config.yml"
 en-GB:
   <<: *DEFAULT_EN

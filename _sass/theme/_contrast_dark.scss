@@ -76,7 +76,7 @@ html[data-theme="dark"] {
     .notice--info,
     .notice--warning,
     .notice--success,
-    .notice {
+    .notice--danger {
       background-color: mix($background, $notice-color, 85%);
       color: #{$text};
       border-color: #{$text};

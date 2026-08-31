@@ -313,65 +313,6 @@ body:hover .visually-hidden button {
 }
 
 
-/*
-   Navicons
-   ========================================================================== */
-
-.navicon {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: $navicon-width;
-  height: $navicon-height;
-  background: var(--global-masthead-link-color);
-  margin: auto;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: $navicon-width;
-    height: $navicon-height;
-    background: var(--global-masthead-link-color);
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-
-  &:before {
-    top: (-2 * $navicon-height);
-  }
-
-  &:after {
-    bottom: (-2 * $navicon-height);
-  }
-}
-
-.close .navicon {
-  /* hide the middle line*/
-  background: transparent;
-
-  /* overlay the lines by setting both their top values to 0*/
-  &:before, &:after{
-    -webkit-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    top: 0;
-    width: $navicon-width;
-  }
-
-  /* rotate the lines to form the x shape*/
-  &:before{
-    -webkit-transform: rotate3d(0,0,1,45deg);
-            transform: rotate3d(0,0,1,45deg);
-  }
-  &:after{
-    -webkit-transform: rotate3d(0,0,1,-45deg);
-            transform: rotate3d(0,0,1,-45deg);
-  }
-}
 
 
 /*
@@ -497,4 +438,25 @@ a.reversefootnote {
 .required {
   color: $danger-color;
   font-weight: bold;
+}
+
+
+/*
+   Screen reader only
+   ========================================================================== */
+
+/* Font Awesome also ships this rule, but fontawesome.css is loaded
+   asynchronously, so labels such as the "Permalink" text on /talks/ would be
+   briefly visible before it applies. Defining it here puts it in the
+   render-blocking main.css, so it is hidden from the first paint. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

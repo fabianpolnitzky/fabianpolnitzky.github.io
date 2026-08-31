@@ -1,5 +1,14 @@
-{% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
+{% comment %}
+  Prefix for all internal links and asset URLs.
+
+  In production (GitHub Pages builds with JEKYLL_ENV=production) this is the
+  absolute site URL, so canonical links, feeds and shared URLs are fully
+  qualified. During local development (`jekyll serve`, JEKYLL_ENV defaults to
+  "development") it collapses to just `site.baseurl`, keeping every link
+  relative so navigation stays on localhost instead of jumping to the live site.
+{% endcomment %}
+{% if jekyll.environment == "production" %}
+  {% assign base_path = site.url | default: site.github.url | append: site.baseurl %}
 {% else %}
-  {% assign base_path = site.github.url %}
+  {% assign base_path = site.baseurl %}
 {% endif %}

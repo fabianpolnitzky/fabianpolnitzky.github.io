@@ -1,24 +1,32 @@
 {% include base_path %}
 
+{% comment %}
+  Every link here is derived from site.paginate_path rather than hard-coded, so
+  the paginator follows the blog wherever its permalink points.
+
+  - first_page_path: the paginated index itself (page 1 has no /pageN/ segment),
+    obtained by stripping the "page:num" segment off site.paginate_path.
+  - numbered pages:  site.paginate_path with :num substituted.
+  - Previous/Next:   paginator.previous_page_path / next_page_path, which
+    jekyll-paginate already resolves correctly, including the page-1 case.
+{% endcomment %}
+{% assign first_page_path = site.paginate_path | split: 'page:num' | first %}
+
 {% if paginator.total_pages > 1 %}
-<nav class="pagination">
+<nav class="pagination" aria-label="Blog pages">
   <ul>
     {% comment %} Link for previous page {% endcomment %}
     {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <li><a href="{{ base_path }}/">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a></li>
-      {% else %}
-        <li><a href="{{ base_path }}/page{{ paginator.previous_page }}/">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a></li>
-      {% endif %}
+      <li><a href="{{ base_path }}{{ paginator.previous_page_path }}" rel="prev">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a></li>
     {% else %}
       <li><a href="#" class="disabled"><span aria-hidden="true">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span></a></li>
     {% endif %}
 
     {% comment %} First page {% endcomment %}
     {% if paginator.page == 1 %}
-      <li><a href="#" class="disabled current">1</a></li>
+      <li><a href="#" class="disabled current" aria-current="page">1</a></li>
     {% else %}
-      <li><a href="{{ base_path }}/">1</a></li>
+      <li><a href="{{ base_path }}{{ first_page_path }}">1</a></li>
     {% endif %}
 
     {% assign page_start = 2 %}
@@ -36,15 +44,9 @@
 
     {% for index in (page_start..page_end) %}
       {% if index == paginator.page %}
-        <li><a href="{{ base_path }}/page{{ index }}/" class="disabled current">{{ index }}</a></li>
+        <li><a href="#" class="disabled current" aria-current="page">{{ index }}</a></li>
       {% else %}
-        {% comment %} Distance from current page and this link {% endcomment %}
-        {% assign dist = paginator.page | minus: index %}
-        {% if dist < 0 %}
-          {% comment %} Distance must be a positive value {% endcomment %}
-          {% assign dist = 0 | minus: dist %}
-        {% endif %}
-        <li><a href="{{ base_path }}/page{{ index }}/">{{ index }}</a></li>
+        <li><a href="{{ base_path }}{{ site.paginate_path | replace: ':num', index }}">{{ index }}</a></li>
       {% endif %}
     {% endfor %}
 
@@ -54,14 +56,14 @@
     {% endif %}
 
     {% if paginator.page == paginator.total_pages %}
-      <li><a href="#" class="disabled current">{{ paginator.page }}</a></li>
+      <li><a href="#" class="disabled current" aria-current="page">{{ paginator.page }}</a></li>
     {% else %}
-      <li><a href="{{ base_path }}/page{{ paginator.total_pages }}/">{{ paginator.total_pages }}</a></li>
+      <li><a href="{{ base_path }}{{ site.paginate_path | replace: ':num', paginator.total_pages }}">{{ paginator.total_pages }}</a></li>
     {% endif %}
 
     {% comment %} Link next page {% endcomment %}
     {% if paginator.next_page %}
-      <li><a href="{{ base_path }}/page{{ paginator.next_page }}/">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a></li>
+      <li><a href="{{ base_path }}{{ paginator.next_page_path }}" rel="next">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a></li>
     {% else %}
       <li><a href="#" class="disabled"><span aria-hidden="true">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</span></a></li>
     {% endif %}

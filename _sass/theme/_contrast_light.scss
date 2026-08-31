@@ -12,8 +12,12 @@ $background-light           : #fafafa;
 $background-lighter        : #ffffff;
 $text                      : #000000;
 $text-muted                : #404040;
-$link                      : #5B84B1;
-$link-dark                 : #c6c5fe;
+/* Link colours are chosen to clear WCAG AA (4.5:1) against $background.
+   $link is a deepened version of the original slate blue (5.8:1); $link-dark
+   is the hover state and must stay darker still, so hovering never lightens
+   text against the white page. */
+$link                      : #42688F;
+$link-dark                 : #2A4760;
 $link-light                : #ff73fd;
 $footer                    : #ffffff;
 $border                    : #c0c0c0;

@@ -5,4 +5,9 @@ permalink: /talkmap.html
 author_profile: true
 ---
 
-<iframe src="/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
+{% include base_path %}
+
+<iframe src="{{ base_path }}/talkmap/map.html"
+        title="Map of places where I have presented my research"
+        loading="lazy"
+        style="border:none; display:block; width:100%; height:min(700px, 75vh); min-height:320px;"></iframe>

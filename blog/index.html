@@ -1,0 +1,21 @@
+---
+layout: archive
+title: "Blog"
+author_profile: true
+---
+
+{% comment %}
+  This file must live at blog/index.html rather than carrying a permalink from
+  the site root: jekyll-paginate rebuilds the template for pages 2+ by reading
+  <source>/<page.dir>/index.html, so the file's real path has to match its URL
+  or every paginated page renders empty. paginate_path in _config.yml must stay
+  in step with this directory.
+{% endcomment %}
+
+<div class="grid__wrapper">
+{% for post in paginator.posts %}
+    {% include archive-single.html type="grid" %}
+{% endfor %}
+</div>
+
+{% include paginator.html %}

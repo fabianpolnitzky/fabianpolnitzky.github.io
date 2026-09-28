@@ -35,7 +35,7 @@ If you have any questions, feel free to reach out to me!
 ## From my blog
 
 <div class="grid__wrapper">
-{% for post in site.posts limit: 3 %}
+{% for post in site.posts limit: 4 %}
     {% include archive-single.html type="grid" %}
 {% endfor %}
 </div>

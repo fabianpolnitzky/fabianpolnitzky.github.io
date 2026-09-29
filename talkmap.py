@@ -1,10 +1,13 @@
 # Leaflet cluster map of talk locations
 #
-# Run this from the _talks/ directory, which contains .md files of all your
-# talks. This scrapes the location YAML field from each .md file, geolocates it
-# with geopy/Nominatim, and uses the getorg library to output data, HTML, and
-# Javascript for a standalone cluster map. This is functionally the same as the
-# #talkmap Jupyter notebook.
+# Run this from the repository root. This scrapes the location YAML field from
+# each .md file in _talks/, geolocates it with geopy/Nominatim, and writes the
+# marker data to talkmap/org-locations.js.
+#
+# Only the data file is regenerated. getorg's output_html_cluster_map would
+# also overwrite talkmap/map.html and talkmap/leaflet_dist/ with its outdated
+# template (Leaflet 1.0.0-beta.2, http tiles); those files are hand-maintained
+# and must not be touched.
 import frontmatter
 import glob
 import getorg
@@ -16,6 +19,8 @@ TIMEOUT = 5
 
 # Collect the Markdown files
 g = glob.glob("_talks/*.md")
+if not g:
+    raise SystemExit("No _talks/*.md files found; run this from the repository root.")
 
 # Prepare to geolocate
 geocoder = Nominatim(user_agent="academicpages.github.io")
@@ -51,6 +56,5 @@ for file in g:
     except Exception as ex:
         print(f"An unhandled exception occurred while processing input {location} with message {ex}")
 
-# Save the map
-m = getorg.orgmap.create_map_obj()
-getorg.orgmap.output_html_cluster_map(location_dict, folder_name="talkmap", hashed_usernames=False)
+# Save the marker data, leaving the hand-edited map page and Leaflet files alone
+getorg.orgmap.location_dict_to_jsvar(location_dict, "talkmap/org-locations.js", hashed_usernames=False)

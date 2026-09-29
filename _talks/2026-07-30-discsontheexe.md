@@ -3,7 +3,7 @@ title: "Precise determination of protoplanetary disc lifetimes and accretion tim
 collection: talks
 category: talks
 type: "Plenary Talk"
-venue: "University of Exeter, UK"
+venue: "University of Exeter"
 date: 2026-07-30
 location: "Exeter, UK"
 link: "/files/12_Polnitzky_Fabian_Upload.pdf"

@@ -20,6 +20,7 @@ package-lock.json
 
 # Ignore the python environment used for the talkmap and markdown generator
 .venv/
+__pycache__/
 uv.lock
 .python-version
 

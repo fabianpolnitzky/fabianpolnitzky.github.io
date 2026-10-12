@@ -101,6 +101,7 @@ exclude:
   - pyproject.toml
   - Rakefile
   - README
+  - research_map
   - talkmap.py
   - tmp
   - uv.lock

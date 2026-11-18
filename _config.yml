@@ -19,7 +19,7 @@ author:
   email            : "fabian.polnitzky@rwth-aachen.de" 
 
   # Academic websites
-  ads              : https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&p_=0&q=%20%20first_author%3A%22polnitzky%22%20year%3A(2025-)&sort=date%20desc%2C%20bibcode%20desc
+  ads              : https://scixplorer.org/search?ads_compat=1&fq=%7B%21type%3Daqp+v%3D%24fq_database%7D&fq_database=%28database%3A%22astronomy%22+OR+database%3A%22physics%22%29&p=1&q=author%3A%22polnitzky%2C+f%22+year%3A%282025-%29&sort=date+desc&d=astrophysics
   arxiv            : # https://arxiv.org/search/astro-ph?query=Polnitzky%2C+F&searchtype=author&abstracts=show&order=-announced_date_first&size=50
   googlescholar    : # "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   orcid            : "https://orcid.org/0009-0006-3890-8980"
